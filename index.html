@@ -1,0 +1,88 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Electron SMS App</title>
+  
+
+  <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<script>
+  require('./renderer.js');
+</script>
+
+<body>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input id="searchInput" type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button id="searchButton" class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+
+    <h3>Add a person:</h3>
+    <div class="row">
+      <div class="five columns">
+        <label for="firstname">Firstname</label>
+        <input class="u-full-width" placeholder="Enter the first name" id="firstname" type="text">
+      </div>
+      <div class="five columns">
+        <label for="lastname">Lastname</label>
+        <input class="u-full-width" placeholder="Enter the second name" id="lastname" type="text">
+      </div>
+      <div class="two columns">
+        <label for="add" class="invisible">x</label>
+        <input class="button-primary" value="Add" id="add" type="button">
+      </div>
+    </div>
+
+    <h3>All persons:</h3>
+    <table class="u-full-width">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tablebody">
+      </tbody>
+    </table>
+  </div>
+  
+  <script type="text/javascript">
+    var remote = require('electron').remote;
+    document.addEventListener('keydown', function (e) {
+      if (e.which === 123) {
+        remote.getCurrentWindow().webContents.openDevTools();
+      } else if (e.which === 116) {
+        location.reload();
+      }
+    });
+</script>
+
+<script type="text/javascript" src="js/index.js"></script>
+
+<script>
+  const electron = require ('electron');
+  const {ipcRenderer} = electron;
+
+  const form = document.querySelector('form');
+  form.addEventListener('submit', submitForm);
+
+  function submitForm(e){
+    e.preventDefault();
+    const item = document.querySelector('#item').value;
+    ipcRenderer.send('item:add', item);
+  }
+</script>
+</body>
+</html>

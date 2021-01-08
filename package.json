@@ -1,0 +1,17 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "Electron app for School Management System",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Ankit Yadav",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.8.8"
+  },
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
+}
