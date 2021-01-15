@@ -14,19 +14,10 @@
   require('./renderer.js');
 </script>
 
+<input type="" name="" id="myInput" placeholder="search..." onkeyup="searchFunction()">
+
 <body>
   <div class="container">
-
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="input-group">
-          <input id="searchInput" type="text" class="form-control" placeholder="Search for...">
-          <span class="input-group-btn">
-            <button id="searchButton" class="btn btn-default" type="button">Go!</button>
-          </span>
-        </div><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
-    </div><!-- /.row -->
 
     <h3>Add a person:</h3>
     <div class="row">
@@ -45,18 +36,45 @@
     </div>
 
     <h3>All persons:</h3>
-    <table class="u-full-width">
+    <table id= "result" class="u-full-width">
       <thead>
         <tr>
           <th>Firstname</th>
           <th>Lastname</th>
-          <th></th>
         </tr>
       </thead>
       <tbody id="tablebody">
+        <td></td>
       </tbody>
     </table>
   </div>
+
+
+
+
+
+
+  
+  <h3>Making HTTP REST API Calls  
+    using net Module in Electron 
+</h3> 
+  <button id="get"> 
+    Make Sample GET Request 
+  </button> 
+  <br><br> 
+  <button id="post"> 
+    Make Sample POST Request 
+  </button> 
+<!-- Adding Individual Renderer 
+     Process JS File -->
+<script src="index.js"></script>
+
+
+
+
+
+
+
   
   <script type="text/javascript">
     var remote = require('electron').remote;
@@ -74,14 +92,30 @@
 <script>
   const electron = require ('electron');
   const {ipcRenderer} = electron;
-
-  const form = document.querySelector('form');
-  form.addEventListener('submit', submitForm);
-
   function submitForm(e){
     e.preventDefault();
     const item = document.querySelector('#item').value;
     ipcRenderer.send('item:add', item);
+  }
+</script>
+
+<script >
+  const searchFunction = () =>{
+    console.log("search");
+    let filter = document.getElementById('myInput').value.toUpperCase();
+    let result = document.getElementById('result');
+    let tr = result.getElementsByTagName('tr');
+    for(var i=0; i<tr.length; i++){
+      let td = tr[i].getElementsByTagName('td')[0];
+      if(td){
+        let textValue = td.textContent || td.innerHTML;
+        if(textValue.toUpperCase().indexOf(filter)>-1){
+          tr[i].style.display = "";
+        } else{
+          tr[i].style.display = "none";
+        }
+      } 
+    }
   }
 </script>
 </body>

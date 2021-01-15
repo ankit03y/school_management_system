@@ -4,9 +4,25 @@ const path = require('path')
 const url = require('url')
 const  ipc = electron.ipcRenderer
 
+const express = require('express');
+const restApp = express();
+
+
+//Routes
+restApp.get('/', (req, res) =>{
+  res.send('We are on home ');
+
+})
+
+//How to start listing to server
+console.log(restApp.listen(3000));
+
+
+
+
 
 // Template for the Menu
-menuTemplate = [
+let menuTemplate = [
   {
     label: 'Application',
     submenu: [
@@ -45,7 +61,7 @@ function createWindow () {
   }))
 
   // Open the devtools.
-  abc = mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', () =>{
     mainWindow = null;
@@ -64,7 +80,11 @@ function createWindow () {
 //Handle create Add student window
 function createStudentWindow(){
   //create new window
-  addWindow = new BrowserWindow({});
+  addWindow = new BrowserWindow({
+    width: 500,
+    height: 400,
+    title: 'Add Student'
+  });
   //load html into window
   addWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'addStudent.html'),

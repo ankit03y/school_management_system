@@ -12,6 +12,8 @@
     "electron": "^1.8.8"
   },
   "dependencies": {
-    "nedb": "^1.8.0"
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.7"
   }
 }
