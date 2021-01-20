@@ -10,11 +10,38 @@
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
-<script>
-  require('./renderer.js');
-</script>
+
 
 <input type="" name="" id="myInput" placeholder="search..." onkeyup="searchFunction()">
+
+
+<head> 
+  <meta charset="UTF-8"> 
+  <title></title> 
+  <!-- https://electronjs.org/docs/tutorial 
+                         /security#csp-meta-tag -->
+  <meta http-equiv="Content-Security-Policy" 
+        content="script-src 'self' 'unsafe-inline';" /> 
+</head> 
+<body> 
+  <h1></h1> We are using node  
+  <script> 
+       document.write(process.versions.node) 
+  </script>, Chrome  
+  <script> 
+       document.write(process.versions.chrome) 
+  </script>, and Electron  
+  <script> 
+       document.write(process.versions.electron) 
+  </script>. 
+
+  <h3>File Upload in Electron</h3> 
+  <button id="upload">Upload File</button> 
+    
+  <!-- Adding Individual Renderer Process JS File -->
+  <script src="js/index.js"></script> 
+</body>
+
 
 <body>
   <div class="container">
@@ -48,32 +75,13 @@
       </tbody>
     </table>
   </div>
-
-
-
-
-
-
-  
-  <h3>Making HTTP REST API Calls  
-    using net Module in Electron 
-</h3> 
   <button id="get"> 
     Make Sample GET Request 
   </button> 
   <br><br> 
   <button id="post"> 
     Make Sample POST Request 
-  </button> 
-<!-- Adding Individual Renderer 
-     Process JS File -->
-<script src="index.js"></script>
-
-
-
-
-
-
+  </button>
 
   
   <script type="text/javascript">
@@ -89,7 +97,7 @@
 
 <script type="text/javascript" src="js/index.js"></script>
 
-<script>
+<!-- <script>
   const electron = require ('electron');
   const {ipcRenderer} = electron;
   function submitForm(e){
@@ -97,7 +105,7 @@
     const item = document.querySelector('#item').value;
     ipcRenderer.send('item:add', item);
   }
-</script>
+</script>-->
 
 <script >
   const searchFunction = () =>{

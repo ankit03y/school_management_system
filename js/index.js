@@ -1,4 +1,86 @@
 const database = require('./js/database');
+const electron = require('electron'); 
+
+const path = require('path'); 
+
+const fs = require('fs'); 
+      
+var uploadFile = document.getElementById('upload'); 
+
+// Defining a Global file path Variable to store 
+// user-selected file 
+global.filepath = undefined;
+
+uploadFile.addEventListener('click', () => { 
+  const {dialog} = require('electron')
+
+// If the platform is 'win32' or 'Linux' 
+	if (process.platform !== 'darwin') { 
+		// resolves to a Promise<Object> 
+		dialog.showOpenDialog({ 
+			title: 'Select the File to be uploaded', 
+			defaultPath: path.join(__dirname, '../assets/'), 
+			buttonLabel: 'Upload', 
+			// restricting the user to only Text Files. 
+			filters: [ 
+				{ 
+					name: 'Text Files', 
+					extensions: ['txt', 'docx'] 
+				}, ], 
+			// specifying the File Selector Property 
+			properties: ['openFile'] 
+		}).then(file => { 
+			// stating whether dialog operation was 
+			// cancelled or not. 
+			console.log(file.canceled); 
+			if (!file.canceled) { 
+			// updating the GLOBAL filepath variable 
+			// to user-selected file. 
+			global.filepath = file.filePaths[0].toString(); 
+			console.log(global.filepath); 
+      } 
+      if (global.filepath && !file.canceled) { 
+        fs.readFile(global.filepath, {encoding: 'utf-8'}, function(err,data) { 
+           if (!err) { 
+                console.log('received data: ' + data); 
+           } else { 
+                console.log(err); 
+            } 
+         }); 
+       } 
+      
+		}).catch(err => { 
+			console.log(err) 
+		}); 
+	} 
+	else { 
+		// If the platform is 'darwin' (macOS) 
+		dialog.showOpenDialog({ 
+			title: 'Select the File to be uploaded', 
+			defaultPath: path.join(__dirname, '../assets/'), 
+			buttonLabel: 'Upload', 
+			filters: [ 
+				{ 
+					name: 'Text Files', 
+					extensions: ['txt', 'docx'] 
+				}, ], 
+			// Specifying the File Selector and Directory 
+			// Selector Property In macOS 
+			properties: ['openFile', 'openDirectory'] 
+		}).then(file => { 
+			console.log(file.canceled); 
+			if (!file.canceled) { 
+			global.filepath = file.filePaths[0].toString(); 
+			console.log(global.filepath); 
+			} 
+		}).catch(err => { 
+			console.log(err) 
+		}); 
+	} 
+}); 
+
+
+
 
 window.onload = function() {
 
@@ -73,7 +155,7 @@ function deletePerson(id) {
   ]
 });*/
 
-//This function is for calling api using user id and password also called Authentication.
+/*This function is for calling api using user id and password also called Authentication.
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 xhr.addEventListener("readystatechange", function () {
@@ -96,4 +178,4 @@ function httpGet(theUrl)
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
-httpGet("http://sms.currentdiary.com/sms_api/sendsms.php?username=verma12&password=verma6536&mobile=8707370705&sendername=CDIARY&message=this%20is%20offline%20testingGet%20currentdiary"); 
+httpGet("http://sms.currentdiary.com/sms_api/sendsms.php?username=verma12&password=verma6536&mobile=8707370705&sendername=CDIARY&message=this%20is%20offline%20testingGet%20currentdiary"); */
