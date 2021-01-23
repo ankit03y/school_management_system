@@ -12,8 +12,22 @@
     "electron": "^1.8.8"
   },
   "dependencies": {
+    "@fullcalendar/core": "^5.5.1",
+    "@fullcalendar/daygrid": "^5.5.0",
+    "@popperjs/core": "^2.6.0",
+    "bootstrap": "^4.6.0",
+    "bootstrap-select": "^1.13.18",
+    "chart.js": "^2.9.4",
+    "datatables.net-dt": "^1.10.23",
     "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "jquery-waypoints": "^2.0.5",
+    "jquery.counterup": "^2.1.0",
+    "js-datepicker": "^5.18.0",
+    "modernizr": "^3.11.4",
+    "moment": "^2.29.1",
     "nedb": "^1.8.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "scrollup": "^1.0.1"
   }
 }

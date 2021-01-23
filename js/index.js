@@ -1,5 +1,5 @@
-const database = require('./js/database');
 const electron = require('electron'); 
+const database = require('./js/database');
 
 const path = require('path'); 
 
