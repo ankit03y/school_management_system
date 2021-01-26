@@ -1,8 +1,6 @@
 const electron = require('electron'); 
 const database = require('./js/database');
-
 const path = require('path'); 
-
 const fs = require('fs'); 
       
 var uploadFile = document.getElementById('upload'); 
