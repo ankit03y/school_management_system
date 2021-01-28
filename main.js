@@ -7,6 +7,7 @@ const express = require('express');
 const restApp = express();
 
 
+
 //Routes
 restApp.get('/', (req, res) =>{
   res.send('We are on home ');
@@ -15,6 +16,7 @@ restApp.get('/', (req, res) =>{
 
 //How to start listing to server
 console.log(restApp.listen(3000));
+
 
 
 
@@ -293,8 +295,8 @@ if(process.env.NODE_ENV !== 'production'){
           days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
           daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
           daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-          months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-          monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          months: ['January', 'February', 'March', 'April', 'May', 'June', 'Jany', 'August', 'September', 'October', 'November', 'December'],
+          monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jan', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
           today: 'Today',
           clear: 'Clear',
           dateFormat: 'dd/mm/yyyy',
@@ -583,20 +585,20 @@ if(process.env.NODE_ENV !== 'production'){
         aspectRatio: 1.8,
         events: [{
             title: 'All Day Event',
-            start: '2019-04-01'
+            start: '2021-04-01'
           },
 
           {
             title: 'Meeting',
-            start: '2019-04-12T14:30:00'
+            start: '2021-04-12T14:30:00'
           },
           {
             title: 'Happy Hour',
-            start: '2019-04-15T17:30:00'
+            start: '2021-04-15T17:30:00'
           },
           {
             title: 'Birthday Party',
-            start: '2019-04-20T07:00:00'
+            start: '2021-04-20T07:00:00'
           }
         ]
       });
