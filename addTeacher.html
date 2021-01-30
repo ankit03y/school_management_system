@@ -1,0 +1,150 @@
+<h3>Add Teacher:</h3>
+<div class="row">
+  
+    <div class="card-body">
+        <div class="heading-layout1">
+            <div class="item-title">
+                <h3>Add Teacher</h3>
+            </div>
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                    aria-expanded="false">...</a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#"><i
+                            class="fas fa-times text-orange-red"></i>Close</a>
+                    <a class="dropdown-item" href="#"><i
+                            class="fas fa-cogs text-dark-pastel-green"></i>Edit</a>
+                    <a class="dropdown-item" href="#"><i
+                            class="fas fa-redo-alt text-orange-peel"></i>Refresh</a>
+                </div>
+            </div>
+        </div>
+        <form class="new-added-form">
+            <div class="row">
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label for="firstname">First Name *</label>
+                    <input type="text" placeholder="enter the first name" id="firstname" class="form-control">
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Last Name *</label>
+                    <input type="text" placeholder="" id="lastName" class="form-control">
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Gender *</label>
+                    <select class="select2">
+                        <option value="">Please Select Gender *</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">Others</option>
+                    </select>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Date Of Birth *</label>
+                    <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
+                        data-position='bottom right'>
+                    <i class="far fa-calendar-alt"></i>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                  <label>Date Of Joining*</label>
+                  <input type="text" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
+                      data-position='bottom right'>
+                  <i class="far fa-calendar-alt"></i>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Employee ID</label>
+                    <input type="text" placeholder="" class="form-control">
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                  <label>Contact Number *</label>
+                  <input type="text" placeholder="" id="conatctNumber" class="form-control">
+                 </div>
+                 <div class="col-xl-3 col-lg-6 col-12 form-group">
+                  <label>Alternate Number</label>
+                  <input type="text" placeholder="" id="alternateNumber" class="form-control">
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Aadhar Number*</label>
+                    <input type="text" placeholder="" id="studentAadharNumber" class="form-control">
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Father's Name*</label>
+                    <input type="text" placeholder="" id="fathersName" class="form-control">
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Mother's Name*</label>
+                    <input type="text" placeholder="" id="mothersName" class="form-control">
+                  </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Blood Group *</label>
+                    <select class="select2">
+                        <option value="">Please Select Group *</option>
+                        <option value="1">A+</option>
+                        <option value="2">A-</option>
+                        <option value="3">B+</option>
+                        <option value="3">B-</option>
+                        <option value="3">O+</option>
+                        <option value="3">O-</option>
+                    </select>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                  <label>Status</label>
+                  <select class="select2">
+                    <option value="">Please Select *</option>
+                    <option value="1">New Teacher</option>
+                    <option value="2">Old Teacher</option>
+                  </select>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Religion *</label>
+                    <select class="select2">
+                        <option value="">Please Select Religion *</option>
+                        <option value="1">Hindu</option>
+                        <option value="2">Muslim</option>
+                        <option value="3">Christian</option>
+                        <option value="3">Buddish</option>
+                        <option value="3">Others</option>
+                    </select>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                  <label>Category</label>
+                  <select class="select2">
+                    <option value="">Please Select *</option>
+                    <option value="1">General</option>
+                    <option value="2">OBC</option>
+                    <option value="2">SC</option>
+                    <option value="2">ST</option>
+                  </select>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>E-Mail</label>
+                    <input type="email" placeholder="" class="form-control">
+                </div>
+                <div class="col-xl-3 col-lg-6 col-12 form-group">
+                    <label>Phone</label>
+                    <input type="text" placeholder="" class="form-control">
+                </div>
+                <div class="col-lg-6 col-12 form-group">
+                    <label>Short BIO</label>
+                    <textarea class="textarea form-control" name="message" id="form-message" cols="10"
+                        rows="9"></textarea>
+                </div>
+                <div class="col-lg-6 col-12 form-group mg-t-30">
+                    <label class="text-dark-medium">Upload Teacher Photo (150px X 150px)</label>
+                    <input type="file" class="form-control-file">
+                </div>
+                <div class="col-12 form-group mg-t-8">
+                  <label for="add" class="invisible">x</label>
+                    <button type="submit" id="add" value="Add" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
+                    <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                    <div class="two columns">
+                      <label for="add" class="invisible">x</label>
+                      <input class="button-primary" value="Add" id="add" type="button">
+                      <label for="reset" class="invisible">x</label>
+                      <input class="button-primary" value="Reset" id="reset" type="button">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

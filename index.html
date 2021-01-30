@@ -297,8 +297,7 @@
                                           class="fas fa-angle-right"></i>Teacher Details</a>
                               </li>
                               <li class="nav-item">
-                                  <a href="add-teacher.html" class="nav-link"><i class="fas fa-angle-right"></i>Add
-                                      Teacher</a>
+                                  <a onclick="addTeacher()"class="nav-link"><i class="fas fa-angle-right"></i>Add Teacher</a>
                               </li>
                               <li class="nav-item">
                                   <a href="teacher-payment.html" class="nav-link"><i
@@ -448,6 +447,18 @@
                       }
                     };
                     xhttp.open("GET", "addStudent.html", true);
+                    xhttp.send();
+                  }</script>
+              </div>
+              <div id="container"class="breadcrumbs-area">
+                <script>function addTeacher() {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                      if (this.readyState == 4 && this.status == 200) {
+                       document.getElementById("container").innerHTML = this.responseText;
+                      }
+                    };
+                    xhttp.open("GET", "addTeacher.html", true);
                     xhttp.send();
                   }</script>
               </div>

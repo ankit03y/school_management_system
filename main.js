@@ -82,31 +82,6 @@ function createWindow () {
   })
 }
 
-//Handle create Add student window
-function createStudentWindow(){
-  //create new window
-  addWindow = new BrowserWindow({
-    width: 500,
-    height: 400,
-    title: 'Add Student'
-  });
-  //load html into window
-  addWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'addStudent.html'),
-    protocol: 'file',
-    slashes: true
-
-  }));
-
-}
-
-//Add Student
-ipcMain.on('item:add', function(e, item){
-  console.log(item);
-  mainWindow.webContents.send('item:add', item);
-  addWindow.close();
-});
-
 // Opens the about window
 function openAboutWindow() {
 
