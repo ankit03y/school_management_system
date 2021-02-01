@@ -25,19 +25,8 @@
   <link rel="stylesheet" href="css/datepicker.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-  <!-- Modernize js -->
-  <script src="js/modernizr-3.6.0.min.js"></script>
 </head>
 
-
-<head> 
-  <meta charset="UTF-8"> 
-  <title></title> 
-  <!-- https://electronjs.org/docs/tutorial 
-                         /security#csp-meta-tag -->
-  <!-- <meta http-equiv="Content-Security-Policy" 
-        content="script-src 'self' 'unsafe-inline';" />  -->
-</head> 
 <body> 
   <div class="navbar navbar-expand-md header-menu-one bg-light">
     <div class="nav-bar-header-one">
@@ -446,7 +435,7 @@
                        document.getElementById("container").innerHTML = this.responseText;
                       }
                     };
-                    xhttp.open("GET", "addStudent.html", true);
+                    xhttp.open("post", "addStudent.html", true);
                     xhttp.send();
                   }</script>
               </div>
@@ -488,26 +477,10 @@
   <button id="upload">Upload File</button> 
     
   <!-- Adding Individual Renderer Process JS File -->
-  <script src="js/index.js"></script> 
 </body>
 
 
 <body>
-  <div class="container">
-
-    <h3>Add a person:</h3>
-    <div class="row">
-      <div class="five columns">
-        <label for="firstname">Firstname</label>
-        <input class="u-full-width" placeholder="Enter the first name" id="firstname" type="text">
-      </div>
-      <div class="five columns">
-        <label for="lastname">Lastname</label>
-        <input class="u-full-width" placeholder="Enter the second name" id="lastname" type="text">
-      </div>
-     
-    </div>
-
     <h3>All persons:</h3>
     <table id= "result" class="u-full-width">
       <thead>
@@ -521,13 +494,6 @@
       </tbody>
     </table>
   </div>
-  <button id="get"> 
-    Make Sample GET Request 
-  </button> 
-  <br><br> 
-  <button id="post"> 
-    Make Sample POST Request 
-  </button>
 
   
   <script type="text/javascript">
