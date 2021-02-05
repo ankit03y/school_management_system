@@ -1,7 +1,6 @@
 // Initialize the database
 var Datastore = require('nedb');
-db = new Datastore({ filename: 'db/student.db', autoload: true });
-db = new Datastore({ filename: 'db/teacher.db', autoload: true });
+db = new Datastore({ filename: 'db/persons.db', autoload: true });
 
 
 // Adds a person
